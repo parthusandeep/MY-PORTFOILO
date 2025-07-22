@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%; /* Dark Gray */
+    --foreground: 0 0% 98%; /* Off-white */
+    --card: 0 0% 3.9%; /* Dark Gray */
+    --card-foreground: 0 0% 98%; /* Off-white */
+    --popover: 0 0% 3.9%; /* Dark Gray */
+    --popover-foreground: 0 0% 98%; /* Off-white */
+    --primary: 142.1 76.2% 36.3%; /* Green */
+    --primary-foreground: 355.7 100% 97.3%; /* Light Red */
+    --secondary: 240 3.7% 15.9%; /* Darker Gray */
+    --secondary-foreground: 0 0% 98%; /* Off-white */
+    --muted: 240 3.7% 15.9%; /* Darker Gray */
+    --muted-foreground: 240 5% 64.9%; /* Medium Gray */
+    --accent: 240 3.7% 15.9%; /* Darker Gray */
+    --accent-foreground: 0 0% 98%; /* Off-white */
+    --destructive: 0 62.8% 30.6%; /* Dark Red */
+    --destructive-foreground: 0 0% 98%; /* Off-white */
+    --border: 240 3.7% 15.9%; /* Darker Gray Border */
+    --input: 240 3.7% 15.9%; /* Darker Gray Input */
+    --ring: 142.1 76.2% 36.3%; /* Green Ring */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Custom Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSlow {
+    0%,
+    100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.05;
+    }
+  }
+
+  @keyframes borderGlow {
+    0% {
+      box-shadow: 0 0 0px rgba(0, 255, 255, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(128, 0, 128, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0px rgba(0, 255, 255, 0.7);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 8s infinite ease-in-out;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .hover\:animate-border-glow:hover {
+    animation: borderGlow 1.5s infinite ease-in-out;
+  }
+}
