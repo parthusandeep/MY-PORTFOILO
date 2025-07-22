@@ -1,12 +1,13 @@
 "use client"
 
 import type React from "react"
+
 import { useState } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { useToast } from "@/hooks/use-toast"
+import { useToast } from "@/hooks/use-toast" // Assuming you have useToast hook
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -26,48 +27,61 @@ export function ContactForm() {
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
-  try {
-    const response = await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    // Simulate API call
+    // Simulate API call
+await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    if (response.ok) {
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-        variant: "default",
-      });
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    }
-  } catch (error) {
-    console.error("Submission error:", error);
+console.log("Form submitted:", formData)
+
+toast({
+  title: "Message Sent!",
+  description: "Thanks for reaching out. I'll get back to you soon.",
+  variant: "default",
+})
+try {
+  const response = await fetch("http://localhost:5000/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+
+  if (response.ok) {
     toast({
-      title: "Error",
-      description: "An unexpected error occurred.",
-      variant: "destructive",
-    });
+      title: "Message Sent!",
+      description: "Thanks for reaching out. I'll get back to you soon.",
+      variant: "default",
+    })
+    setFormData({ name: "", email: "", message: "" })
   }
 
-  setIsSubmitting(false);
-};
+} catch (error) {
+  console.error("Submission error:", error)
+  toast({
+    title: "Error",
+    description: "An unexpected error occurred.",
+    variant: "destructive",
+  })
+}
+
+
+    
+  }
+
+  
+  
+  
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 p-6 bg-card rounded-lg shadow-xl border border-border">
       <div className="grid gap-2">
-        <Label htmlFor="name">Name</Label>
+        <Label htmlFor="name" className="text-foreground text-left">
+          Name
+        </Label>
         <Input
           id="name"
           type="text"
@@ -75,10 +89,13 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
+          className="bg-background border-border text-foreground focus:border-emerald-500 focus:ring-emerald-500"
         />
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email" className="text-foreground text-left">
+          Email
+        </Label>
         <Input
           id="email"
           type="email"
@@ -86,10 +103,13 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
+          className="bg-background border-border text-foreground focus:border-emerald-500 focus:ring-emerald-500"
         />
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="message">Message</Label>
+        <Label htmlFor="message" className="text-foreground text-left">
+          Message
+        </Label>
         <Textarea
           id="message"
           placeholder="Your message..."
@@ -97,9 +117,14 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
+          className="bg-background border-border text-foreground focus:border-emerald-500 focus:ring-emerald-500"
         />
       </div>
-      <Button type="submit" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full px-8 py-3 text-lg font-semibold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+      >
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>

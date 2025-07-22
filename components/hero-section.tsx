@@ -47,7 +47,7 @@ export function HeroSection() {
       <div className="relative z-10 mt-12 md:mt-0 md:w-1/2 flex justify-center md:justify-center animate-fade-in-up animation-delay-800">
         <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-border transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-transparent hover:animate-border-glow">
           <img
-            src="/placeholder.svg?height=256&width=256"
+            src="/white photo.jpg"
             alt="Sandeep's profile photo"
             className="object-cover w-full h-full"
           />

@@ -15,18 +15,18 @@ const projects: Project[] = [
   {
     title: "MERN E-commerce Platform",
     description:
-      "A full-stack e-commerce application built with the MERN stack, featuring user authentication, product listings, shopping cart, and order management.",
-    githubLink: "https://github.com/parthusandeep/mern-ecommerce", // Replace with your actual link
-    liveLink: "#", // Replace with your actual link
-    tags: ["MongoDB", "Express.js", "React", "Node.js", "Stripe"],
+      "A full-stack  swag swiggy clone application built with the MERN stack, featuring user authentication, product listings, shopping cart, and order management.",
+    githubLink:" https://github.com/parthusandeep/-Swiggy-Clone-swag-React", // Replace with your actual link
+    liveLink: "https://swiggy-clone-swag-react-ziz2.vercel.app/", // Replace with your actual link
+    tags: ["MongoDB", "Express.js", "React", "Node.js"],
   },
   {
-    title: "Real-time Chat Application",
+    title: "Real-time Backend Dashboard for Firm Application",
     description:
-      "A real-time chat application using Socket.IO for instant messaging, with user authentication and private messaging features.",
-    githubLink: "https://github.com/parthusandeep/realtime-chat-app", // Replace with your actual link
-    liveLink: "#", // Replace with your actual link
-    tags: ["React", "Node.js", "Socket.IO", "MongoDB"],
+      "A real-time backend dashboard firm application using Mern. Implemented secure user authentication and protected routes using JWT and middleware..",
+    githubLink: "https://github.com/parthusandeep/SWAG-99_BACKEND-reactdash", // Replace with your actual link
+    liveLink: "https://swag-99-backend-reactdash-k8aq.vercel.app/", // Replace with your actual link
+    tags: ["React", "Node.js", "Express.js", "MongoDB"],
   },
   {
     title: "Personal Portfolio Website",
@@ -34,7 +34,7 @@ const projects: Project[] = [
       "This very portfolio website, showcasing my skills and projects, built with Next.js, Tailwind CSS, and shadcn/ui.",
     githubLink: "https://github.com/parthusandeep/my-portfolio", // Replace with your actual link
     liveLink: "#", // This is the current site, so no external live link needed
-    tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui"],
+    tags: ["React","Node.js","Express.js","Next.js","Mongodb","Tailwind CSS", "shadcn/ui"],
   },
 ]
 
