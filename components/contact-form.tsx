@@ -51,6 +51,7 @@ export function ContactForm() {
           description: "Thanks for reaching out. I'll get back to you soon.",
           variant: "destructive",
         })
+         setFormData({ name: "", email: "", message: "" })
       }
     } catch (error) {
       console.error("Submission error:", error)
