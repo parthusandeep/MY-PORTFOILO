@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: "Personal Portfolio Website",
     description:
       "This very portfolio website, showcasing my skills and projects, built with Next.js, Tailwind CSS, and shadcn/ui.",
-    githubLink: "https://github.com/parthusandeep/my-portfolio", // Replace with your actual link
+    githubLink: "https://github.com/parthusandeep/MY-PORTFOILO", // Replace with your actual link
     liveLink: "#", // This is the current site, so no external live link needed
     tags: ["React","Node.js","Express.js","Next.js","Mongodb","Tailwind CSS", "shadcn/ui"],
   },

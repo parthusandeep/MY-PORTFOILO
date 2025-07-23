@@ -61,12 +61,7 @@ try {
 
 } catch (error) {
   console.error("Submission error:", error)
-  toast({
-    title: "Error",
-    description: "An unexpected error occurred.",
-    variant: "destructive",
-  })
-}
+  }
 
 
     
